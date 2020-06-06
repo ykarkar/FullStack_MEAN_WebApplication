@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Welcome to the Term Project
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,78 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large">Home Page</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+<ion-content>
+   
+<br>
+   <h4 style="text-align: center;"> App Author:- Yash Amitbhai Karkar</h4>
+  
+  <br>
+  <div style="text-align: center;">
+    <ion-button type="submit" (click)="loadproducts()">Initial Load Product Data</ion-button>
+    <ion-grid>
+      <ion-row size="large" class="ion-text-uppercase" >
+        <ion-col>
+          <div>
+            ID
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            Description
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            Quantity
+          </div>
+        </ion-col>
+        
+        <ion-col>
+          <div>
+            PricePerUnit
+          </div>
+        </ion-col>
+        
+        <ion-col>
+          <div>
+            Reorder Quantity
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngFor="let i of outRec">
+        <ion-col>
+          <div>
+            {{i.pID}}
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            {{i.pDesc}}
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            {{i.pqty}}
+          </div>
+        </ion-col>
+        
+        <ion-col>
+          <div>
+            {{i.priceperunit}}
+          </div>
+        </ion-col>
+        
+        <ion-col>
+          <div>
+            {{i.rqty}}
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    
+    </div>
+  </ion-content>
 </ion-content>

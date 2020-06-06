@@ -1,0 +1,6 @@
+[
+		{"pID": "A27389","pDesc": "MS Office","pqty":12,"priceperunit":10.00,"rqty":10},
+		{"pID": "B38737","pDesc": "WPS","pqty":15,"priceperunit":15.00,"rqty":11},
+		{"pID": "CU3333","pDesc": "SAMSUNG s10","pqty":12,"priceperunit":20.00,"rqty":12},
+		{"pID": "CU3333","pDesc": "OnePlus 10","pqty":123,"priceperunit":202.00,"rqty":5}
+  ]

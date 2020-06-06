@@ -1,17 +1,84 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Product Details
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <ion-content style="text-align: center;">
+    <form>
+       <ion-item>
+        <ion-label position="stacked">Product ID</ion-label>
+        <ion-input required type="text" [(ngModel)]="pId" name="pID">
+        </ion-input>
+      </ion-item>
+    <ion-button type="submit" (click)="retrieve()">Retrieve Product </ion-button>&nbsp;&nbsp;&nbsp;&nbsp;
+    <ion-button type="submit" (click)="retrieveall()">Retrieve All Products </ion-button>
+    </form>
+    {{outMsg}}
+    <ion-grid>
+      <ion-row size="large" class="ion-text-uppercase" >
+        <ion-col>
+          <div>
+            ID
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            Description
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            Quantity
+          </div>
+        </ion-col>
+        
+        <ion-col>
+          <div>
+            PricePerUnit
+          </div>
+        </ion-col>
+        
+        <ion-col>
+          <div>
+            Reorder Quantity
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngFor="let i of outRec">
+        <ion-col>
+          <div>
+            {{i.pID}}
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            {{i.pDesc}}
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            {{i.pqty}}
+          </div>
+        </ion-col>
+        
+        <ion-col>
+          <div>
+            {{i.priceperunit}}
+          </div>
+        </ion-col>
+        
+        <ion-col>
+          <div>
+            {{i.rqty}}
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    
+   <!-- <li *ngFor="let i of outRec">{{i.pID}} {{i.pDesc}}  {{i.pqty}} {{i.priceperunit}} {{i.rqty}}</li>-->
+    </ion-content>
 </ion-content>

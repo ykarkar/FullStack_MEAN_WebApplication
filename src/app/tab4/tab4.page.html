@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Edit or Delete Products</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-content style="text-align: center;">
+    <form>
+      <ion-item>
+      <ion-label position="stacked">Product ID</ion-label>
+      <ion-input required type="text" [(ngModel)]="pId" name="pId">
+      </ion-input>
+      </ion-item>
+      <ion-item>
+      <ion-label position="stacked">Description</ion-label>
+      <ion-input [(ngModel)]="pdesc" name="pdesc"></ion-input>
+      </ion-item>
+      <ion-item>
+      <ion-label position="stacked">Quantity on hand</ion-label>
+      <ion-input [(ngModel)]="pQty" name="pQty"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Price Per Unit</ion-label>
+        <ion-input [(ngModel)]="pricePerUnit" name="pricePerUnit"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Reorder Quantity</ion-label>
+          <ion-input [(ngModel)]="rQty" name="rQty"></ion-input>
+          </ion-item>
+    <ion-button type="submit" (click)="deleteOne()">Delete Course</ion-button>
+    <ion-button type="submit" (click)="updateOne()">Update Course</ion-button>
+    </form>
+    {{outMsg}}
+    <li *ngFor="let i of outRec">{{i.pID}} {{i.pDesc}}  {{i.pqty}} {{i.priceperunit}} {{i.rqty}}</li>
+    </ion-content>
+</ion-content>
